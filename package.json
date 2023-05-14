@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20230511.0",
+    "@tsconfig/node16": "^1.0.3",
     "@types/jsonwebtoken": "^9.0.1",
     "@types/mocha": "^10.0.1",
     "@types/should": "^13.0.0",
@@ -33,13 +34,14 @@
     "mocha": "^10.2.0",
     "prettier": "^2.8.2",
     "should": "^13.2.3",
+    "ts-node": "^10.9.1",
     "typescript": "^4.9.4"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc -emitDeclarationOnly && ts-node -T ./esbuild.ts",
+    "build": "tsc -emitDeclarationOnly && ts-node -T ./esbuild.mjs",
     "lint": "eslint src",
     "test": "mocha --require ts-node/register --exit --bail --slow 1000 --timeout 5000 ./test/test.ts",
     "ts": "ts-node -T"
